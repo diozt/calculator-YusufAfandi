@@ -9,6 +9,7 @@ const equalSign = document.querySelector('.equal-sign')
 const clearBtn = document.querySelector('.all-clear')
 const decimal = document.querySelector('.decimal')
 const percent = document.querySelector('.precentage')
+const del = document.querySelector('.delete')
 
 
 const updateScreen = (number) =>{
@@ -104,4 +105,19 @@ inputPercent = ()=>{
 
 percent.addEventListener('click',(event)=>{
     inputPercent()
+})
+
+
+delNumber=()=>{
+    if(currentNumber ==='0'){
+        return
+    }
+
+    currentNumber = currentNumber.slice(0, -1)
+    updateScreen(currentNumber)
+
+}
+
+del.addEventListener('click',(event)=>{
+    delNumber()
 })
